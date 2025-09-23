@@ -1,35 +1,131 @@
+/* Custom properties for easy color and spacing adjustments */
+:root {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #007bff;
+    --card-bg-color: #1e1e1e;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --border-color: #333;
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Base styles for a dark theme */
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     text-align: center;
 }
 
-main {
-    padding: 2rem;
+/* Container to center and limit width */
+.container {
     max-width: 960px;
-    margin: auto;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-section {
-    background: #fff;
+/* Hero section with a modern look */
+.hero {
+    background: var(--bg-color);
+    padding: 4rem 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.hero-content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+/* Card for sections to give a clean separation */
+.card {
+    background: var(--card-bg-color);
     padding: 2rem;
     margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    text-align: left;
 }
 
+.card h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+/* Project card styling with hover effect */
 .project-card {
-    border-left: 4px solid #333;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-disabled {
+    background-color: #6c757d;
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Footer style */
+.footer {
+    padding: 1rem;
+    border-top: 2px solid var(--border-color);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #6c757d;
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 600px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
 }
